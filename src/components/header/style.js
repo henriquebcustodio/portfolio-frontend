@@ -19,8 +19,13 @@ export const Navbar = styled.nav`
 `
 
 export const Logo = styled.a`
-  font-size: 1.5rem;
-  color: ${theme.text.highlight};
+  font-size: 1.8rem;
+  color: ${theme.text.default};
+  cursor: pointer;
+
+  &:hover {
+    color: ${theme.text.highlight};
+  }
 `
 
 const hiddenLinks = css`

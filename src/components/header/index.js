@@ -8,7 +8,7 @@ const Header = () => {
 
   return (
     <Navbar>
-      <Logo>Henrique</Logo>
+      <Logo>{"<Hbc/>"}</Logo>
       <Links isOpen={isMenuOpen}>
         <Link isActive={true}>Home</Link>
         <Link>About</Link>
