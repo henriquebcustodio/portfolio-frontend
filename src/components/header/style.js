@@ -3,7 +3,7 @@ import { theme } from "../../shared/theme";
 import { HEADER_HEIGHT, TABLET_BREAK } from "../../shared/layout";
 
 export const Navbar = styled.nav`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   display: flex;
@@ -15,6 +15,7 @@ export const Navbar = styled.nav`
   padding: 1rem 2rem;
   background-color: ${theme.bg.nav};
   z-index: 10;
+  box-shadow: 0px 2px 8px -4px rgba(0, 0, 0, 0.5);
 `
 
 export const Logo = styled.a`
@@ -31,15 +32,15 @@ export const Links = styled.div`
   flex-direction: column;
   align-items: center;
   position: absolute;
-  top: 0;
+  top: ${HEADER_HEIGHT};
   left: 0;
   height: 100vh;
   width: 100%;
   box-sizing: border-box;
-  padding: 5rem 1rem 1.5rem;
+  padding: 1.5rem;
   background-color: ${theme.bg.nav};
+  border-top: 2px solid ${theme.component.default};
   overflow: hidden;
-  z-index: -1;
 
   @media screen and (max-width: ${TABLET_BREAK}) {
     ${({ isOpen }) => isOpen ? '' : hiddenLinks};
@@ -47,11 +48,12 @@ export const Links = styled.div`
   }
 
   @media screen and (min-width: ${TABLET_BREAK}) {
-    position: relative;
+    position: static;
     flex-direction: row;
     width: max-content;
     height: 100%;
     padding: 0;
+    border-top: none;
     background-color: transparent;
   }
 `
@@ -61,7 +63,7 @@ export const Link = styled.a`
   font-size: 1.5rem;
   cursor: pointer;
   color: ${({ isActive }) => isActive ? theme.text.highlight : theme.text.default};
-  border-bottom: ${({ isActive }) => isActive ? '2px solid' + theme.component.highlight : 'none'};
+  border-bottom: ${({ isActive }) => isActive ? '2px solid ' + theme.component.highlight : 'none'};
 
   &:hover {
     color: ${theme.text.highlight};
