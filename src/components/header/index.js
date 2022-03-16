@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Logo, Navbar, Links, Link, Icon } from "./style"
+import { Logo, Navbar, Links, Link, Icon, HeaderContactButton } from "./style"
 import { Squash as Hamburger } from "hamburger-react";
 import { theme } from "../../shared/theme";
 
@@ -13,6 +13,7 @@ const Header = () => {
         <Link isActive={true}>Home</Link>
         <Link>About</Link>
         <Link>Projects</Link>
+        <HeaderContactButton role="button">Contact</HeaderContactButton>
       </Links>
       <Icon>
         <Hamburger

@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import { theme } from "../../shared/theme";
 import { HEADER_HEIGHT, TABLET_BREAK } from "../../shared/layout";
+import { outline } from "../button/style";
 
 export const Navbar = styled.nav`
   position: fixed;
@@ -60,12 +61,18 @@ export const Links = styled.div`
     padding: 0;
     border-top: none;
     background-color: transparent;
+    column-gap: 0.5rem;
   }
 `
 
 export const Link = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 1rem;
   font-size: 1.5rem;
+  height: 2.2rem;
+  box-sizing: border-box;
   cursor: pointer;
   color: ${({ isActive }) => isActive ? theme.text.highlight : theme.text.default};
   border-bottom: ${({ isActive }) => isActive ? '2px solid ' + theme.component.highlight : 'none'};
@@ -78,10 +85,19 @@ export const Link = styled.a`
     margin-bottom: 0;
     border-bottom: none;
     background-color: ${({ isActive }) => isActive ? theme.component.highlight : 'transparent'};
-    padding: 0.2rem 1rem;
-    margin: 0 0.5rem;
-    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
     font-size: 1.2rem;
+  }
+`
+
+export const HeaderContactButton = styled.a`
+  ${outline}
+  font-size: 1.5rem;
+
+  @media screen and (min-width: ${TABLET_BREAK}) {
+    font-size: 1.2rem;
+    height: 2.2rem;
   }
 `
 
