@@ -79,16 +79,6 @@ export const Link = styled.a`
 `
 
 export const Icon = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: ${theme.text.default};
-  cursor: pointer;
-
-  &:hover {
-  color: ${theme.text.highlight};
-  }
-
   @media screen and (min-width: ${TABLET_BREAK}) {
     display: none;
   }

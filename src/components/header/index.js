@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Logo, Navbar, Links, Link, Icon } from "./style"
-import { MdMenu, MdClose } from "react-icons/md"
+import { Squash as Hamburger } from "hamburger-react";
+import { theme } from "../../shared/theme";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,9 +14,14 @@ const Header = () => {
         <Link>About</Link>
         <Link>Projects</Link>
       </Links>
-      <Icon onClick={() => setIsMenuOpen(isOpen => !isOpen)}>
-        {!isMenuOpen && <MdMenu size={"2rem"} />}
-        {isMenuOpen && <MdClose size={"2rem"} />}
+      <Icon>
+        <Hamburger
+          toggled={isMenuOpen}
+          toggle={setIsMenuOpen}
+          size={32}
+          color={theme.text.default}
+          direction="right"
+        />
       </Icon>
     </Navbar>
   )
