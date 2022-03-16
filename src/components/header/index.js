@@ -19,7 +19,7 @@ const Header = () => {
         <Hamburger
           toggled={isMenuOpen}
           toggle={setIsMenuOpen}
-          size={32}
+          size={24}
           color={theme.text.default}
           direction="right"
         />

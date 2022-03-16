@@ -20,7 +20,7 @@ export const Navbar = styled.nav`
 `
 
 export const Logo = styled.a`
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: ${theme.text.default};
   cursor: pointer;
 
@@ -40,7 +40,7 @@ export const Links = styled.div`
   position: absolute;
   top: ${HEADER_HEIGHT};
   left: 0;
-  height: 100vh;
+  height: calc(100vh - ${HEADER_HEIGHT});
   width: 100%;
   box-sizing: border-box;
   padding: 1.5rem;
@@ -70,7 +70,7 @@ export const Link = styled.a`
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   height: 2.2rem;
   box-sizing: border-box;
   cursor: pointer;
@@ -87,18 +87,13 @@ export const Link = styled.a`
     background-color: ${({ isActive }) => isActive ? theme.component.highlight : 'transparent'};
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    font-size: 1.2rem;
   }
 `
 
 export const HeaderContactButton = styled.a`
   ${outline}
-  font-size: 1.5rem;
-
-  @media screen and (min-width: ${TABLET_BREAK}) {
-    font-size: 1.2rem;
-    height: 2.2rem;
-  }
+  font-size: 1.2rem;
+  height: 2.2rem;
 `
 
 export const Icon = styled.div`
