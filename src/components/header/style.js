@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 import { theme } from "../../shared/theme";
 import { HEADER_HEIGHT, TABLET_BREAK } from "../../shared/layout";
 import { outline } from "../button/style";
+import { NavLink, Link as RouterLink } from "react-router-dom";
 
 export const Navbar = styled.nav`
   position: fixed;
@@ -19,8 +20,9 @@ export const Navbar = styled.nav`
   box-shadow: 0px 2px 8px -4px rgba(0, 0, 0, 0.5);
 `
 
-export const Logo = styled.a`
+export const Logo = styled(RouterLink)`
   font-size: 1.5rem;
+  text-decoration: none;
   color: ${theme.text.default};
   cursor: pointer;
 
@@ -65,17 +67,22 @@ export const Links = styled.div`
   }
 `
 
-export const Link = styled.a`
+export const Link = styled(NavLink)`
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
   font-size: 1.2rem;
+  text-decoration: none;
   height: 2.2rem;
   box-sizing: border-box;
   cursor: pointer;
-  color: ${({ isActive }) => isActive ? theme.text.highlight : theme.text.default};
-  border-bottom: ${({ isActive }) => isActive ? '2px solid ' + theme.component.highlight : 'none'};
+  color: ${theme.text.default};
+
+  &.active {
+    color: ${theme.text.highlight};
+    border-bottom: 2px solid ${theme.component.highlight};
+  }
 
   &:hover {
     color: ${theme.text.highlight};
@@ -83,10 +90,13 @@ export const Link = styled.a`
 
   @media screen and (min-width: ${TABLET_BREAK}) {
     margin-bottom: 0;
-    border-bottom: none;
-    background-color: ${({ isActive }) => isActive ? theme.component.highlight : 'transparent'};
     padding: 0.5rem 1rem;
     border-radius: 5px;
+
+    &.active {
+      background-color: ${theme.component.highlight};
+      border-bottom: none;
+    }
   }
 `
 

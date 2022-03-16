@@ -8,11 +8,11 @@ const Header = () => {
 
   return (
     <Navbar>
-      <Logo>{"<Hbc/>"}</Logo>
+      <Logo to="/">{"<Hbc/>"}</Logo>
       <Links isOpen={isMenuOpen}>
-        <Link isActive={true}>Home</Link>
-        <Link>About</Link>
-        <Link>Projects</Link>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/projects">Projects</Link>
         <HeaderContactButton role="button">Contact</HeaderContactButton>
       </Links>
       <Icon>
