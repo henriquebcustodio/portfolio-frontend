@@ -63,7 +63,6 @@ export const Links = styled.div`
     padding: 0;
     border-top: none;
     background-color: transparent;
-    column-gap: 0.5rem;
   }
 `
 
@@ -78,6 +77,7 @@ export const Link = styled(NavLink)`
   box-sizing: border-box;
   cursor: pointer;
   color: ${theme.text.default};
+  transition: background-color 150ms;
 
   &.active {
     color: ${theme.text.highlight};
@@ -90,6 +90,7 @@ export const Link = styled(NavLink)`
 
   @media screen and (min-width: ${TABLET_BREAK}) {
     margin-bottom: 0;
+    margin-right: 0.5rem;
     padding: 0 1rem;
     border-radius: 5px;
 
