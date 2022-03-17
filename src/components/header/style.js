@@ -90,7 +90,7 @@ export const Link = styled(NavLink)`
 
   @media screen and (min-width: ${TABLET_BREAK}) {
     margin-bottom: 0;
-    padding: 0.5rem 1rem;
+    padding: 0 1rem;
     border-radius: 5px;
 
     &.active {
@@ -102,6 +102,7 @@ export const Link = styled(NavLink)`
 
 export const HeaderContactButton = styled.a`
   ${outline}
+  padding: 0 1rem;
   font-size: 1.2rem;
   height: 2.2rem;
 `
