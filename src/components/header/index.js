@@ -6,14 +6,18 @@ import { theme } from "../../shared/theme";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  }
+
   return (
     <Navbar>
       <Logo to="/">{"<Hbc/>"}</Logo>
       <Links isOpen={isMenuOpen}>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/projects">Projects</Link>
-        <HeaderContactButton role="button">Contact</HeaderContactButton>
+        <Link onClick={closeMenu} to="/">Home</Link>
+        <Link onClick={closeMenu} to="/about">About</Link>
+        <Link onClick={closeMenu} to="/projects">Projects</Link>
+        <HeaderContactButton onClick={closeMenu} role="button">Contact</HeaderContactButton>
       </Links>
       <Icon>
         <Hamburger
