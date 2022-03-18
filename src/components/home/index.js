@@ -1,23 +1,23 @@
-import { HeroActions, HeroMain, HomeContactButton } from "./style";
-import { FaLinkedin, FaGithub } from "react-icons/fa"
+import { useEffect, useState } from "react";
+import Hero from "../hero";
+import { getTechnologies } from "../../services/strapi";
 
 const Home = () => {
+  const [technologies, setTechnologies] = useState([]);
+
+  useEffect(() => {
+    getTechnologies()
+      .then(response => {
+        setTechnologies(response.data.data);
+      })
+      .catch(err => {
+        console.log(err);
+      })
+  }, [])
+
   return (
     <section>
-      <HeroMain>
-        <h1>Hello, I'm Henrique Bonfá.</h1>
-        <p>A front-end developer passionate about software and technology.</p>
-        <p>I work with tools such as React and Angular to transform great designs into interactive web pages and applications.</p>
-        <HeroActions>
-          <a href="https://www.linkedin.com/in/henriquebonfa/">
-            <FaLinkedin />
-          </a>
-          <a href="https://github.com/henriquebcustodio">
-            <FaGithub />
-          </a>
-          <HomeContactButton>Contact</HomeContactButton>
-        </HeroActions>
-      </HeroMain>
+      <Hero />
     </section>
   )
 }
