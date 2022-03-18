@@ -1,13 +1,14 @@
 import styled from "styled-components";
-import { theme } from "../../shared/theme"
-import { outline } from "../button/style";
+import { theme } from "../../../shared/theme"
+import { outline } from "../../button/style";
 
-export const HeroContainer = styled.div`
+export const HeroContainer = styled.section`
   position: relative;
   display: flex;
   height: max-content;
   flex-direction: column;
-  animation: slideIn 500ms;
+  /* animation: slideIn 500ms; */
+  margin-bottom: 4.5rem;
 
   @keyframes slideIn {
     from {
