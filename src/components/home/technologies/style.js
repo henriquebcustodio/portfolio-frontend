@@ -18,4 +18,4 @@ export const TechnologiesContainer = styled.div`
     align-items: center;
     justify-content: space-between;
   }
-`
+`;
