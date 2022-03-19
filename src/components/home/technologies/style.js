@@ -14,7 +14,8 @@ export const TechnologiesContainer = styled.div`
   }
 
   @media screen and (min-width: ${TABLET_BREAK}) {
-    grid-template-columns: repeat(6, 1fr);
+    display: flex;
+    align-items: center;
     justify-content: space-between;
   }
 `
