@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { theme } from "../../../shared/theme"
+import { theme } from "../../../shared/theme";
 import { outline } from "../../button/style";
 
 export const HeroContainer = styled.section`
@@ -8,7 +8,6 @@ export const HeroContainer = styled.section`
   height: max-content;
   flex-direction: column;
   /* animation: slideIn 500ms; */
-  margin-bottom: 4.5rem;
 
   @keyframes slideIn {
     from {
@@ -37,7 +36,7 @@ export const HeroContainer = styled.section`
       margin-bottom: 0;
     }
   }
-`
+`;
 
 export const HeroActions = styled.div`
   display: flex;
@@ -59,10 +58,10 @@ export const HeroActions = styled.div`
       color: ${theme.text.highlight};
     }
   }
-`
+`;
 
 export const HeroContactButton = styled.a`
   ${outline};
   height: 2rem;
   padding: 0 1rem;
-`
+`;

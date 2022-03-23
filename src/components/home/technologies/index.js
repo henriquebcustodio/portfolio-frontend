@@ -1,13 +1,13 @@
 import { StyledH2 } from "../../heading";
-import { TechnologiesContainer } from "./style";
+import { IconsContainer, TechnologiesContainer } from "./style";
 import Technology from "../../technology";
 
 const Technologies = ({ technologies }) => {
   return (
-    <section>
+    <TechnologiesContainer>
       <StyledH2>Technologies</StyledH2>
       {technologies &&
-        <TechnologiesContainer>
+        <IconsContainer>
           {technologies.map(technology => {
             const baseUrl = process.env.REACT_APP_STRAPI_URL;
             return (
@@ -18,9 +18,9 @@ const Technologies = ({ technologies }) => {
               />
             );
           })}
-        </TechnologiesContainer>
+        </IconsContainer>
       }
-    </section>
+    </TechnologiesContainer>
   );
 };
 export default Technologies;

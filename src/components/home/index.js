@@ -1,6 +1,7 @@
 import { Fragment, useState, useEffect } from "react";
 import { getHomePage } from "../../services/strapi/pages/home";
 import Hero from "./hero";
+import RecentProjects from "./recentProjects";
 import Technologies from "./technologies";
 
 const Home = () => {
@@ -27,7 +28,9 @@ const Home = () => {
             paragraphs={pageData.hero.paragraphs}
           />
           <Technologies
-            technologies={pageData.technologies} />
+            technologies={pageData.technologies}
+          />
+          <RecentProjects />
         </Fragment>
       }
     </Fragment>
