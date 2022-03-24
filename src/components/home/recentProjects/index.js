@@ -1,6 +1,6 @@
 import { RecentProjectsContainer, RecentProjectsList } from "./style";
 import { StyledH2 } from "../../heading";
-import Project from "../../project";
+import { RecentProject } from "../../project";
 
 const RecentProjects = () => {
   return (
@@ -8,7 +8,10 @@ const RecentProjects = () => {
       <StyledH2>Recent Projects</StyledH2>
       <RecentProjectsList>
         <article style={{ width: '100%' }}>
-          <Project></Project>
+          <RecentProject></RecentProject>
+        </article>
+        <article style={{ width: '100%' }}>
+          <RecentProject></RecentProject>
         </article>
       </RecentProjectsList>
     </RecentProjectsContainer>
